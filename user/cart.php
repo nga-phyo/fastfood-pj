@@ -10,6 +10,9 @@
     }
 
 
+
+    
+
    
 
 
@@ -33,8 +36,8 @@
                     <th>Action</th>
                 </tr>
  
-                
                 <?php 
+                 
                     $total = 0;
                 
                     foreach($_SESSION['cart'] as $id => $qty):
@@ -45,6 +48,8 @@
                     $answer = mysqli_fetch_assoc($result);
 
                     $total += $answer['price']*$qty;
+
+                  
                     
                     
                  ?>

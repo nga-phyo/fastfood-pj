@@ -16,7 +16,7 @@ include_once './file.php';
         $answer = mysqli_query($conn, $sql);
 
         if($answer){
-            redirect('feedbackpage.php');
+            echo "<script>window.alert('success')</script>";
         }
     }
 
