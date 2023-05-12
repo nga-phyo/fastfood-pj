@@ -10,9 +10,6 @@
     }
 
 
-
-    
-
    
 
 
@@ -36,8 +33,8 @@
                     <th>Action</th>
                 </tr>
  
+                
                 <?php 
-                 
                     $total = 0;
                 
                     foreach($_SESSION['cart'] as $id => $qty):
@@ -48,8 +45,6 @@
                     $answer = mysqli_fetch_assoc($result);
 
                     $total += $answer['price']*$qty;
-
-                  
                     
                     
                  ?>
@@ -71,7 +66,7 @@
                     <td><?php echo $answer['price']?></td>
                     <td><?php  echo $answer['price']*$qty ?></td>
                     <td><img src="../foodimage/<?php echo $answer['photo'] ?>" width="100" height="80"></td>
-                    <td><a href="delete.php?id=<?php echo $answer['id'] ?>" class="btn btn-danger"><i class="fa-solid fa-trash"></i> Trash</a></td>
+                    <td><a href="delete.php?id=<?php echo $answer['id'] ?>" class="btn btn-danger" onclick="return confirm('Are you sure! remove this item')"><i class="fa-solid fa-trash"></i> Trash</a></td>
                    
                  </tr>
 
@@ -94,8 +89,8 @@
 
                    <div class="row justify-content-center align-items-center mt-5">
                     <div class="col-6">
-                        <div class="card">
-                            <div class="card-header" style="background-color:beige;text-align:center;color:brown"><h3>You Can Order Now</h3></div>
+                        <div class="card shadow-lg">
+                            <div class="card-header" style="text-align:center;color:brown"><h3>You Can Order Now</h3></div>
                             <div class="card-body">
                                 <a href="./home.php" class="btn btn-success float-end">Order Now</a>
                             </div>

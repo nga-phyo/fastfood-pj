@@ -16,7 +16,7 @@ include_once './file.php';
         $answer = mysqli_query($conn, $sql);
 
         if($answer){
-            echo "<script>window.alert('success')</script>";
+            echo "<script>window.alert('feedback is succees')</script>";
         }
     }
 

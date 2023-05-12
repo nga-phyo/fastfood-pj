@@ -9,7 +9,7 @@ session_start();
 include_once '../user/connect.php';
 include_once '../user/header.php';
 include_once '../user/helper.php';
-include_once './navbar.php';
+
 
 
 
@@ -47,51 +47,66 @@ $user_id = $_SESSION['auth']['id'];
     $data = mysqli_query($conn, $sql);
    
     $feedbacks = mysqli_fetch_all($data,MYSQLI_ASSOC);
-
     
 
     
-   
-   
+    ?>
+    
+    <?php include './header.php' ?>
+    <?php include './navbar.php' ?>
 
-?>
+                <div class="container-fluid">
+                    <h3 class="text-dark mb-4">Customer's Feedback</h3>
+                    <div class="card shadow">
+                        <div class="card-header py-3">
+                            <p class="text-primary m-0 fw-bold">Reviews</p>
 
-
-<div class="container">
-    <div class="row justify-content-center align-itmes-center">
-        <div class="col-6 mt-4">
-
-            <?php foreach($feedbacks as $feedback): ?> 
+                            <?php foreach($feedbacks as $feedback): ?> 
             
-                <div class="card">
-                    <div class="card-body">
-                        <p> <?php echo $feedback['feedback'] ?> </p>
-                        date: <?php  echo $feedback['date'] ?><br>
-                        user: <?php  echo $feedback['name'] ?><br>
-                        user: <?php  echo $feedback['email'] ?>
-                       
-                    </div>
-                </div><br>
+            <div class="card">
+                <div class="card-body">
+                    <p> <?php echo $feedback['feedback'] ?> </p>
+                    date: <?php  echo $feedback['date'] ?><br>
+                    user: <?php  echo $feedback['name'] ?><br>
+                    email: <?php  echo $feedback['email'] ?><br>
+                    sexual: <?php  echo $feedback['sexual'] ?><br>
+                    quality: <?php  echo $feedback['quality'] ?>
+                   
+                </div>
+            </div><br>
 
 
-            <?php endforeach ?>
+        <?php endforeach ?>
 
-            <ul class="pager">
-            <?php 
-                for($i=1; $i<= $nums; $i++){
-                    if($i == $page){
+        <ul class="pager">
+        <?php 
+            for($i=1; $i<= $nums; $i++){
+                if($i == $page){
 
-                        echo "<li><a href = 'feedbackpage.php?page={$i}' style = 'background:#09;color:#fff;'>{$i}</a></li>";
-                    }
-                    else{
-                        echo "<li><a href='feedbackpage.php?page={$i}'>{$i}</a></li>";
-                    }
+                    echo "<li><a href = 'feedbackpage.php?page={$i}' style = 'background:#09;color:#fff;'>{$i}</a></li>";
                 }
-            ?>
-        </ul>
+                else{
+                    echo "<li><a href='feedbackpage.php?page={$i}'>{$i}</a></li>";
+                }
+            }
+        ?>
+
+
+                        </div>
+                        <div class="card-body">
+						<div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+						
+                            
+    
+                            </div>
+                            <div class="row">
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
            
-        </div>
-    </div>
-</div>
 
-
+<?php include './footer.php' ?>

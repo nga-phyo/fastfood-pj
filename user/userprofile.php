@@ -18,16 +18,17 @@
 
 <div class="container">
     <div class="row justify-content-center align-items-center">
-        <div class="col-6 mt-5">
+        <div class="col-5 mt-5">
 
-            <div class="card">
+            <div class="card shadow-lg rounded-2">
                 <div class="card-body">
-                    <h1><i class="fa-solid fa-user"></i>  <?php echo $user['name'] ?></h1>
-                    <p><?php echo $user['email'] ?></p>
+                    <p class="" ><i class="fa-solid fa-user me-2"></i><?php echo $user['name'] ?></p>
+                    <p><i class="fa-sharp fa-solid fa-envelope me-2"></i><?php echo $user['email'] ?></p>
+                    <p><i class="fa-solid fa-phone me-2"></i><?php echo $user['phone'] ?></p>
                 </div>
-                <div class="card-footer">
+                <div class="card-footer text-end">
                     <a href="userprofile.php" class="btn btn-secondary">Cancle</a>
-                    <a href="userprofile_edit.php" class="float-end btn btn-success ">Edit</a>
+                    <a href="userprofile_edit.php" class=" btn btn-success ">Edit</a>
                 </div>
             </div>
 

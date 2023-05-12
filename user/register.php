@@ -88,54 +88,62 @@
 
 
 
-<div class="container">
-    <div class="row justify-content-center align-items-center vh-100">
-        <div class="col-6">
-            
+<div class="container form-color p-4 mt-3 border-1 shadow-sm bg-light shadow-lg login-bg w-50">
+    <div class="row justify-content-center border-2">
+
+    
+
+        <div class="col-7">
+        
+            <div class="heading-title text-center">
+                <h2 class="fw-bolder">Register</h2>
+                <p>If you don't have an account, you can create here!</p>
+            </div>
+        
             <form action="" method="POST" enctype="multipart/form-data">
 
                 <div class="form-group">
-                    <label for="">Name</label>
-                    <input type="text" name="name" class="form-control <?php if(isset($errors['name'])): ?>  is-invalid <?php endif ?>" placeholder="Enter Your Name">
+                    
+                    <input type="text" name="name" class="form-control rounded-pill <?php if(isset($errors['name'])): ?>  is-invalid <?php endif ?>" placeholder="Name">
                         <?php if(isset($errors['name'])): ?>
                             <div class="invalid-feedback"><?php echo $errors['name'] ?></div>
                         <?php endif ?>
                 </div><br>
 
                 <div class="form-group">
-                    <label for="">Email</label>
-                    <input type="email" name="email" class="form-control <?php if(isset($errors['email'])): ?>  is-invalid <?php endif ?>" placeholder="Enter Your Email">
+                    
+                    <input type="email" name="email" class="form-control rounded-pill<?php if(isset($errors['email'])): ?>  is-invalid <?php endif ?>" placeholder="Email">
                         <?php if(isset($errors['email'])): ?>
                             <div class="invalid-feedback"><?php echo $errors['email'] ?></div>
                         <?php endif ?>
                 </div><br>
 
                 <div class="form-group">
-                    <label for="">Password</label>
-                    <input type="password" name="password" class="form-control <?php if(isset($errors['password'])): ?>  is-invalid <?php endif ?>" placeholder="Enter Your Passowrd">
+                    
+                    <input type="password" name="password" class="form-control rounded-pill<?php if(isset($errors['password'])): ?>  is-invalid <?php endif ?>" placeholder="Passowrd">
                         <?php if(isset($errors['password'])): ?>
                             <div class="invalid-feedback"><?php echo $errors['password'] ?></div>
                         <?php endif ?>
                 </div><br>
 
                 <div class="form-group">
-                    <label for="">Phone</label>
-                    <input type="text" name="phone" class="form-control <?php if(isset($errors['phone'])): ?>  is-invalid <?php endif ?>" placeholder="Enter Your Phone">
+                    
+                    <input type="text" name="phone" class="form-control rounded-pill<?php if(isset($errors['phone'])): ?>  is-invalid <?php endif ?>" placeholder="Phone">
                         <?php if(isset($errors['phone'])): ?>
                             <div class="invalid-feedback"><?php echo $errors['phone'] ?></div>
                         <?php endif ?>
                 </div><br>
 
                 <div class="form-group">
-                    <label for="">Type</label>
-                    <select name="type" id="" class="form-control">
+                    
+                    <select name="type" id="" class="form-control rounded-pill mb-3">
                         <option value="admin">--Admin--</option>
                         <option value="user">--User--</option>
                     </select>
                 </div>
 
-                <div class="float-end">
-                <button type="submit" class="btn btn-primary">Register</button>
+                <div class="col-12">
+                <button type="submit" class="btn btn-primary w-100 rounded-pill">Register</button>
                 </div>
 
 

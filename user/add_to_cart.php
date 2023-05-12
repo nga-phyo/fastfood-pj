@@ -12,7 +12,7 @@
         
         $id = $_GET['id'];
         $_SESSION['cart'][$id]++;
-       redirect('cart.php');
+        redirect('home.php');
 
     }
 

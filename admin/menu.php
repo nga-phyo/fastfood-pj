@@ -10,7 +10,7 @@
     include_once '../user/connect.php';
     include_once '../user/header.php';
     include_once '../user/helper.php';
-    include_once './navbar.php';
+   
 
 
     if(!isset($_SESSION['auth']['admin'])){
@@ -40,62 +40,90 @@
 
 
 
-<div class="container">
-    <div class="row justify-content-center align-items-center mt-5">
-        <div class="col-6">
-
-           <form action="" method="POST" enctype="multipart/form-data">
-
-                <div class="form-group">
-                    <label for="">Menu Name</label>
-                    <input type="text" name="menu_name" class="form-control">
-                </div><br>
 
 
-                <div class="form-group">
-                    <label for="">Category</label>
-                    <select name="cat_id" id="" class="form-select">
-                       <?php 
-
-                        $sql = "SELECT * FROM category";
-                        $result = mysqli_query($conn, $sql);
-                    
-                        while($answer = mysqli_fetch_assoc($result)){
-
-                            $cat_id = $answer['cat_id'];
-                            $cat_name = $answer['cat_name'];
-
-                            echo "<option value={$cat_id} selected>{$cat_name}</option>";
-                         
-                        }
-
-                       ?>
-                    </select>
-                </div><br>
+     
+<?php include './header.php' ?>
+    <?php include './navbar.php' ?>
 
 
-                <div class="form-group">
-                    <label for="">Price</label>
-                    <input type="text" name="price" class="form-control">
-                </div><br>
 
-                <div class="form-group">
-                    <label for="">Photo</label>
-                    <input type="file" name="photo" class="form-control">
-                </div><br>
+    <div class="container-fluid">
+        <h3 class="text-dark mb-4">Insert</h3>
+        <div class="card shadow">
+            <div class="card-header py-3">
+                <p class="text-primary m-0 fw-bold">New Menu</p>
+            </div>
+            <div class="card-body">
 
+                    <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
 
-                <div class="form-group">
-                    <label for="">Qty</label>
-                    <input type="text" name="qty" class="form-control">
-                </div><br>
+                    <div class="container">
+                        <div class="row justify-content-center align-items-center mt-5">
+                            <div class="col-6">
 
-                <button type="submit" class="btn btn-success" >Add Menu</button>
+                            <form action="" method="POST" enctype="multipart/form-data">
 
-           </form>
-
-        </div>
-    </div>
-</div>
+                                    <div class="form-group">
+                                        <label for="">Menu Name</label>
+                                        <input type="text" name="menu_name" class="form-control">
+                                    </div><br>
 
 
+                                    <div class="form-group">
+                                        <label for="">Category</label>
+                                        <select name="cat_id" id="" class="form-select">
+                                        <?php 
+
+                                            $sql = "SELECT * FROM category";
+                                            $result = mysqli_query($conn, $sql);
+                                        
+                                            while($answer = mysqli_fetch_assoc($result)){
+
+                                                $cat_id = $answer['cat_id'];
+                                                $cat_name = $answer['cat_name'];
+
+                                                echo "<option value={$cat_id} selected>{$cat_name}</option>";
+                                            
+                                            }
+
+                                        ?>
+                                        </select>
+                                    </div><br>
+
+
+                                    <div class="form-group">
+                                        <label for="">Price</label>
+                                        <input type="text" name="price" class="form-control">
+                                    </div><br>
+
+                                    <div class="form-group">
+                                        <label for="">Photo</label>
+                                        <input type="file" name="photo" class="form-control">
+                                    </div><br>
+
+
+                                    <div class="form-group">
+                                        <label for="">Qty</label>
+                                        <input type="text" name="qty" class="form-control">
+                                    </div><br>
+
+                                    <button type="submit" class="btn btn-success">Add Menu</button>
+
+                            </form>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    </div>                    
+                           
+                            
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+          
+    <?php include './footer.php' ?>
+    

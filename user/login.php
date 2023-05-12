@@ -72,68 +72,68 @@ $errors = [];
     
 ?>
 
-<div class="container">
-    <div class="row justify-content-center align-items-center vh-100">
-        <div class="col-6">
+<div class="container-fluid">
+    <div class="row d-flex justify-content-center login-row pt-4">
+        <div class="text-center mt-5 col-md-12 col-sm-12 col-lg-5">
+            <p class="login-img-txt col-sm-12">Join Our Community</p>
+            <img src="./img/undraw_thought_process_re_om58.svg" class="col-sm-12 w-100" alt="">
+        </div>
+           
+				<div class="col-sm-12 col-md-12  col-lg-3 bg-light shadow-lg login-bg">
+                <?php if(isset($_SESSION['message'])): ?>
 
-            <?php if(isset($_SESSION['message'])): ?>
+                    <div class='alert alert-danger alert-dismissible fade show position-absolute col-3' role='alert'>
+                    <strong>Sorry!</strong> 
+                    <?php 
+                    echo $_SESSION['message'] ;
+                    unset($_SESSION['message'])
+                    ?>
+                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                    </div>
 
-                <div class='alert alert-danger alert-dismissible fade show' role='alert'>
-                <strong>Sorry!</strong> 
-                <?php 
-                echo $_SESSION['message'] ;
-                unset($_SESSION['message'])
-                ?>
-                <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-                </div>
+                    <?php elseif(isset($_SESSION['ban']['message'])): ?>
 
-             <?php elseif(isset($_SESSION['ban']['message'])): ?>
+                    <div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                    <strong>Sorry!</strong> 
+                    <?php 
+                    echo $_SESSION['ban']['message'] ;
+                    unset($_SESSION['ban']['message'])
+                    ?>
+                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                    </div>
 
-                <div class='alert alert-danger alert-dismissible fade show' role='alert'>
-                <strong>Sorry!</strong> 
-                <?php 
-                echo $_SESSION['ban']['message'] ;
-                unset($_SESSION['ban']['message'])
-                ?>
-                <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-                </div>
-
-             <?php endif ?>
-
+                    <?php endif ?>
+				<p class="text-center mb-3 mt-4 text-primary fw-bold login-font">Login Now</p>
 
                  <form action="" method="POST">
-                   <div class="card">
+                  
 
-                        <div class="card-header">
-                            <h3>Login page</h3>
-                        </div>
+                        
 
-                        <div class="card-body">
-                            <div class="form-group">
-                                <label for="">Email</label>
-                                <input type="email" name="email" class="form-control <?php if(isset($errors['email'])): ?>  is-invalid <?php endif ?>" placeholder="Enter Your Email">
-                                    <?php if(isset($errors['email'])): ?>
+                        <div class="mb-4">
+							<input type="text" name="email" id="" class="form-control login-input rounded-pill <?php if(isset($errors['email'])): ?> is-invalid <?php endif ?>" placeholder="Email">
+                                <?php if(isset($errors['email'])): ?>
                                         <div class="invalid-feedback"><?php echo $errors['email'] ?></div>
                                     <?php endif ?>
-                            </div><br>
+					    </div>
 
-                            <div class="form-group">
-                                <label for="">Password</label>
-                                <input type="password" name="password" class="form-control <?php if(isset($errors['password'])): ?>  is-invalid <?php endif ?>" placeholder="Enter Your Passowrd">
-                                    <?php if(isset($errors['password'])): ?>
+                        <div class="mb-5">	
+                            <input type="password" name="password" id="" class="form-control login-input rounded-pill  <?php if(isset($errors['password'])): ?>  is-invalid <?php endif ?>" placeholder="Password">
+                                <?php if(isset($errors['password'])): ?>
                                         <div class="invalid-feedback"><?php echo $errors['password'] ?></div>
                                     <?php endif ?>
-                            </div><br>
                         </div>
-                        <div class="card-footer">
-                            <div class="float-end">
-                            <button type="submit" class="btn btn-success">Login</button>
-                            </div>
-                        </div>
+
+                            
+                        
+                        <button class="btn btn-primary w-100 mb-4 login-input rounded-pill">Login</button>
+					    <button class="btn btn-primary w-100 mb-4 login-input rounded-pill"><i class="fa-brands fa-facebook  "></i> Login with Facebook</button>
+					    <button class="btn btn-danger w-100 mb-5 login-input rounded-pill"><i class="fa-brands fa-google "></i> Login with Google</button>
+
 
                    </div>
                  </form>
-           
+                </div>
 
         </div>
     </div>

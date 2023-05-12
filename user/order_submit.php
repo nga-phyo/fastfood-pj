@@ -115,23 +115,23 @@
 
 
 
-<div class="container">
-    <div class="row justify-content-center align-items-center vh-100">
-        <div class="col-6">
+<div class="container form-color p-4 my-3 border-1 shadow-sm bg-light shadow-lg login-bg w-50">
+    <div class="row justify-content-center align-items-center my-5 ">
+        <div class="col-7">
             
             <form action="" method="POST" enctype="multipart/form-data">
 
                 <div class="form-group">
-                    <label for="">Name</label>
-                    <input type="text" name="name" class="form-control <?php if(isset($errors['name'])): ?>  is-invalid <?php endif ?>" placeholder="Enter Your Name" value="<?php echo $name ?>">
+                    
+                    <input type="text" name="name" class="form-control <?php if(isset($errors['name'])): ?>  is-invalid <?php endif ?>" placeholder="Name" value="<?php echo $name ?>">
                         <?php if(isset($errors['name'])): ?>
                             <div class="invalid-feedback"><?php echo $errors['name'] ?></div>
                         <?php endif ?>
                 </div><br>
 
                 <div class="form-group">
-                    <label for="">Email</label>
-                    <input type="email" name="email" class="form-control <?php if(isset($errors['email'])): ?>  is-invalid <?php endif ?>" placeholder="Enter Your Email" value="<?php echo $email ?>">
+                    
+                    <input type="email" name="email" class="form-control <?php if(isset($errors['email'])): ?>  is-invalid <?php endif ?>" placeholder="Email" value="<?php echo $email ?>">
                         <?php if(isset($errors['email'])): ?>
                             <div class="invalid-feedback"><?php echo $errors['email'] ?></div>
                         <?php endif ?>
@@ -139,32 +139,32 @@
 
 
                 <div class="form-group">
-                    <label for="">Phone</label>
-                    <input type="text" name="phone" class="form-control <?php if(isset($errors['phone'])): ?>  is-invalid <?php endif ?>" placeholder="Enter Your Phone" value="<?php echo $phone ?>">
+                   
+                    <input type="text" name="phone" class="form-control <?php if(isset($errors['phone'])): ?>  is-invalid <?php endif ?>" placeholder="Phone" value="<?php echo $phone ?>">
                         <?php if(isset($errors['phone'])): ?>
                             <div class="invalid-feedback"><?php echo $errors['phone'] ?></div>
                         <?php endif ?>
                 </div><br>
 
                 <div class="form-group">
-                    <label for="">Address</label>
-                    <input type="text" name="address" class="form-control <?php if(isset($errors['address'])): ?>  is-invalid <?php endif ?>" placeholder="Enter Your Address">
+                    
+                    <input type="text" name="address" class="form-control <?php if(isset($errors['address'])): ?>  is-invalid <?php endif ?>" placeholder="Address">
                         <?php if(isset($errors['address'])): ?>
                             <div class="invalid-feedback"><?php echo $errors['address'] ?></div>
                         <?php endif ?>
                 </div><br>
 
                 <div class="form-group">
-                    <label for="">Payment Card</label>
+                    
                     <select name="card" id="" class="form-control">
                         <option value="credit">--Credit card--</option>
                         <option value="gold">--Gold card--</option>
                         <option value="dimond">--Dimond card--</option>
                     </select>
-                </div>
+                </div><br>
 
-                <div class="float-end">
-                <button type="submit" class="btn btn-primary">Register</button>
+                <div class="">
+                <button type="submit" class="btn btn-primary w-100">Register</button>
                 </div>
 
 
